@@ -49,8 +49,10 @@ class Solution{
            res.add(sum);
            return ;
         }
-         
-      f(arr,n,i+1,res,sum+arr.get(i));
+        
+      sum=sum+arr.get(i);     
+      f(arr,n,i+1,res,sum);
+       sum=sum-arr.get(i); 
       f(arr,n,i+1,res,sum);
         
     }
