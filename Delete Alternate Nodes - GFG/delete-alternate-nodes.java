@@ -81,10 +81,10 @@ class Solution {
             while(h!=null ){
                 h.next=h.next.next;
                 h=h.next;
-                if(  h.next.next==null || h.next==null){
-                    h.next=null;
-                    return ;
-                }
+                // if(  h.next.next==null || h.next==null){
+                //     h.next=null;
+                //     return ;
+                // }
             }
             
         }
