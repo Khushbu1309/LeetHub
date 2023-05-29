@@ -40,7 +40,7 @@ class Solution{
                     //System.out.println(sb);
                     if(Pattern.equals(sb.toString())){
                         res.add(s);
-                        break;
+                        // break;
                     }
                     
                     
