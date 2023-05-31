@@ -36,27 +36,21 @@ class Solution {
     // Function to find largest number with minimum frequency
     public static int LargButMinFreq(int arr[], int n) {
         // Your code here
-         Arrays.sort(arr);
-        
-        HashMap<Integer, Integer> freq= new HashMap<>();
-        
-        for(int i=0; i<n; i++){
-            freq.put(arr[i],freq.getOrDefault(arr[i],0)+1);
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i:arr){
+            hm.put(i,hm.getOrDefault(i,0)+1);
         }
-        
-        int ans=Integer.MIN_VALUE;
-        int f=Integer.MAX_VALUE;
-        
-        for(var x:freq.keySet()){
-            if(freq.get(x)<f){
-                ans=x;
-                f=freq.get(x);
+        int freq=Integer.MAX_VALUE;
+        int max=Integer.MIN_VALUE;
+        for(int i:arr){
+            if((hm.get(i)<=freq && i>max) || (hm.get(i)<freq && i<max)){
+                max=i;
+                freq=hm.get(i);
+               // System.out.println(max);
             }
-            else if(freq.get(x)==f){
-                ans=Math.max(ans,x);
-            }
+            
+           
         }
-        
-        return ans;
+        return max;
     }
 }
